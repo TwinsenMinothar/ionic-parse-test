@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="person-outline" slot="end" class="icon-2em"></ion-icon>
+    <ion-title>User Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Name: </ion-label>
+    {{user.get("name")}}
+  </ion-item>
+  <ion-list>
+    <ng-container *ngIf="tasks.length > 0; else noTasks">
+      <app-task *ngFor="let task of tasks" [task]="task" (update)="onEdit($event)" (done)="onDone($event)"></app-task>
+    </ng-container>
+    <ng-template #noTasks>
+      <ion-item>
+        <ion-icon slot="start" name="alert-outline"></ion-icon>
+        No tasks yet.
+      </ion-item>
+    </ng-template>
+  </ion-list>
+
+  <ion-button expand="block" (click)="logOut()">Log Out</ion-button>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addTask()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

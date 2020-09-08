@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Task View</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="['user','tasks']"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="taskForm" (submit)="onSubmit()">
+    <ion-item
+      ><ion-input
+        type="text"
+        inputmode="text"
+        formControlName="title"
+        autofocus="true"
+        placeholder="Task Title"
+      ></ion-input
+    ></ion-item>
+    <ion-button expand="block" type="submit">Save</ion-button>
+  </form>
+  <ion-button expand="block" color="danger" (click)="onDelete()">Delete</ion-button>
+</ion-content>

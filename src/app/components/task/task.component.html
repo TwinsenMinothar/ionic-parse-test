@@ -1,0 +1,6 @@
+<ion-item>
+  <ion-icon name="pencil-outline" slot="start" (click)="update.emit(task)">
+  </ion-icon>
+  {{ task.get("title") }}
+  <ion-toggle slot="end" [checked]="task.get('done')" (click)="done.emit(task)"></ion-toggle>
+</ion-item>
