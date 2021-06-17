@@ -71,4 +71,8 @@ export class UserDetailPage implements OnInit {
     const isDone = task.get("done");
     this.taskService.changeTaskSate(task, !isDone);
   }
+
+  testCloud(){
+    this.parse.cloudFunction('test',{test: 'hello'}).then(r => console.log(r));
+  }
 }

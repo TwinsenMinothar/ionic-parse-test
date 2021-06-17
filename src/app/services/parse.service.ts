@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Parse } from "parse";
 
-Parse.serverURL = "http://localhost:1337/api";
-Parse.initialize("parse-starter");
-Parse.masterKey = "ramdom_key_here";
+Parse.serverURL = "http://192.168.1.69:1337/parse";
+Parse.initialize("ID_1");
+Parse.masterKey = "KEY_1";
 
 @Injectable({
   providedIn: "root",

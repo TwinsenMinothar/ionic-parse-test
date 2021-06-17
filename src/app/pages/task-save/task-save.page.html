@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <form [formGroup]="taskForm" (submit)="onSubmit()">
+  <form [formGroup]="taskForm">
     <ion-item
       ><ion-input
         type="text"
@@ -18,7 +18,12 @@
         placeholder="Task Title"
       ></ion-input
     ></ion-item>
-    <ion-button expand="block" type="submit">Save</ion-button>
+
   </form>
-  <ion-button expand="block" color="danger" (click)="onDelete()">Delete</ion-button>
+
 </ion-content>
+
+<ion-footer>
+    <ion-button expand="block" type="submit" (click)="onSubmit()">Save</ion-button>
+  <ion-button expand="block" color="danger" (click)="onDelete()">Delete</ion-button>
+</ion-footer>

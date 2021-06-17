@@ -19,7 +19,7 @@ export class TaskService {
     const user = this.parse.currentUser;
     if (user !== null) {
       this.parse
-        .saveItem("Tasks", task)
+        .saveItem("Task", task)
         .then((obj) => {
           this.tasks.push(obj);
           this.parse
@@ -35,7 +35,7 @@ export class TaskService {
   }
 
   async subscribeToTasks(): Promise<any> {
-    const sub = await this.parse.subscribeQuery(`Tasks`);
+    const sub = await this.parse.subscribeQuery(`Task`);
     return sub;
   }
 
