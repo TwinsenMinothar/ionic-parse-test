@@ -9,4 +9,4 @@
 npm install
 ionic serve
 ```
-<p>Must have a parse platform service running.</p>
+<p>Must have a parse platform server running.</p>
